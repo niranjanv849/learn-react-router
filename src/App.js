@@ -8,7 +8,9 @@ import URLsNotMatch from "./components/URLsNotMatch";
 import Products from "./components/Products";
 import New from "./components/New";
 import Feature from "./components/Feature";
-
+import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
+import Admin from "./components/Admin";
 function App() {
   return (
     <div className="app">
@@ -23,6 +25,9 @@ function App() {
           <Route path="feature" element={<Feature />} />
           <Route path="new" element={<New />} />
         </Route>
+        <Route path="users" element={<Users />} />
+        <Route path="users/:userId" element={<UserDetails />} />
+        <Route path="users/admin" element={<Admin />} />
       </Routes>
     </div>
   );
