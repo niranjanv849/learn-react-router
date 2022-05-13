@@ -25,9 +25,10 @@ function App() {
           <Route path="feature" element={<Feature />} />
           <Route path="new" element={<New />} />
         </Route>
-        <Route path="users" element={<Users />} />
-        <Route path="users/:userId" element={<UserDetails />} />
-        <Route path="users/admin" element={<Admin />} />
+        <Route path="users" element={<Users />}>
+          <Route path=":userId" element={<UserDetails />} />
+          <Route path="admin" element={<Admin />} />
+        </Route>
       </Routes>
     </div>
   );
