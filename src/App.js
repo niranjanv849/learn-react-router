@@ -4,6 +4,10 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import OrderSummary from "./components/OrderSummary";
+import URLsNotMatch from "./components/URLsNotMatch";
+import Products from "./components/Products";
+import New from "./components/New";
+import Feature from "./components/Feature";
 
 function App() {
   return (
@@ -11,8 +15,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/ordersummary" element={<OrderSummary />} />
+        <Route path="about" element={<About />} />
+        <Route path="ordersummary" element={<OrderSummary />} />
+        <Route path="*" element={<URLsNotMatch />} />
+        <Route path="products" element={<Products />}>
+          <Route path="feature" element={<Feature />} />
+          <Route path="new" element={<New />} />
+        </Route>
       </Routes>
     </div>
   );
